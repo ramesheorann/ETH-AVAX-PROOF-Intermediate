@@ -1,6 +1,9 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
+//For this project, write a smart contract that implements the require(), assert() and revert() statements.
+
+
 contract MyContract {
     address private owner;
 
@@ -8,16 +11,16 @@ contract MyContract {
         owner = msg.sender;
     }
 
-    function withdraw(uint amount) public {
-        require(amount > 0);                                              //require statement
+
+    function withdraw(uint amount) public view {
+        require(amount > 0,"Amount should be greater than zero");         //require statement
 
         uint balance = address(this).balance;
-        require(balance >= amount); 
-
-        (bool success, ) = msg.sender.call{value: amount}("");
-        assert(success);                                                  //assert statement
-
-        revert("Withdrawal failed");                                      //revert statement
+        assert(balance >= amount);                                        //assert statement                 
+        
+        if(amount > balance){
+        revert("Withdrawal failed because of insufficient balance");      //revert statement
+        }                                                              
     }
 
     function getContractBalance() public view returns (uint) {
