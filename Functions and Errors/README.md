@@ -1,12 +1,12 @@
 
 # Metacrafters Project 
 
-This repository contains the source code for the `MyContract` smart contract. The contract is written in Solidity version 0.8.0 and implements the require(), assert() and revert() statements, along with the `getContractBalance` function.
+This repository contains the source code for the `myContract_for_errorHandling` smart contract. The contract is written in Solidity version 0.8.0 and implements the require(), assert() and revert() statements, along with the `getContractBalance` function.
 
 
 ## Getting Started
 
-Follow the steps below to get started with the `MyContract` smart contract:
+Follow the steps below to get started with the `myContract_for_errorHandling` smart contract:
 
 1. Clone this repository to your local machine.
 2. Open the project in your preferred Ethereum development environment.
@@ -18,7 +18,7 @@ Follow the steps below to get started with the `MyContract` smart contract:
 
 ### Description
 
-The `MyContract` contract allows the contract owner to withdraw funds from the contract balance. The contract owner is set during the contract deployment.
+The `myContract_for_errorHandling` contract allows the contract owner to withdraw/add funds from the contract balance. The contract owner is set during the contract deployment.
 
 ### Functions
 
@@ -26,13 +26,16 @@ The `MyContract` contract allows the contract owner to withdraw funds from the c
 
 The constructor function is executed once during contract deployment. It sets the contract owner to the address of the message sender.
 
-#### `withdraw(uint amount)`
+#### `withdraw_amount(uint amount)`
 
-The `withdraw` function allows the contract owner to withdraw a specified amount of funds from the contract balance. It includes several checks using require statements to ensure the withdrawal conditions are met:
-- The amount must be greater than zero.
+The `withdraw_amount` function allows the contract owner to withdraw a specified amount of funds from the contract balance. It includes checks using assert statements to ensure the withdrawal conditions are met:
 - The contract balance must be equal to or greater than the requested amount.
 
-If the require conditions are satisfied, the function attempts to transfer the funds to the message sender using the `call` function. The `assert` statement checks if the transfer was successful. If the transfer fails, the function reverts with an error message using the `revert` statement.
+#### `add_amount(uint amount)`
+
+The `add_amount` function allows the contract owner to add a specified amount of funds to the contract balance. It includes checks using require statements to ensure the addition conditions are met:
+- The amount must be greater than zero.
+
 
 #### `getContractBalance()`
 
@@ -40,10 +43,10 @@ The `getContractBalance` function is a view function that returns the current ba
 
 ## Usage
 
-To use the `MyContract` smart contract, follow these steps:
+To use the `myContract_for_errorHandling` smart contract, follow these steps:
 
 1. Deploy the contract by calling the constructor function.
-2. As the contract owner, call the `withdraw` function and provide the amount to withdraw.
+2. As the contract owner, call the `withdraw_amount` function and provide the amount to withdraw.
 3. Verify that the withdrawal conditions are satisfied and the transfer is successful.
 4. To check the current balance of the contract, call the `getContractBalance` function.
 
