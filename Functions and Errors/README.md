@@ -1,5 +1,5 @@
 
-# Metacrafters Project 
+# Metacrafters project for Error Handling in Solidity
 
 This repository contains the source code for the `myContract_for_errorHandling` smart contract. The contract is written in Solidity version 0.8.0 and implements the require(), assert() and revert() statements, along with the `getContractBalance` function.
 
@@ -50,10 +50,14 @@ To use the `myContract_for_errorHandling` smart contract, follow these steps:
 3. Verify that the withdrawal conditions are satisfied and the transfer is successful.
 4. To check the current balance of the contract, call the `getContractBalance` function.
 
+## Authors
+[Ramesh](https://www.linkedin.com/in/ramesheorann/)
+
+
 ## License
 
-This project is licensed under the MIT License. See the [LICENCE](https://github.com/sonusheorann/ETH-AVAX-PROOF-Intermediate/blob/56948c635b9ad77dbf5335789ff257a7c88e4dca/Functions%20and%20Errors/LICENSE) file for details.
+This project is released under the [MIT License](LICENSE).
 
 ## Credits
 
-This project is a solution to the project task provided by MetaCrafters.
+This project is a solution to the project task provided by [MetaCrafters](https://www.metacrafters.io/).
